@@ -4,45 +4,193 @@
   <meta charset="UTF-8" />
   <title>Pritesh — Product Manager</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #222;
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --border: #1f2937;
     }
-    h1 { font-size: 2.2rem; }
-    h2 { margin-top: 2.5rem; }
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, #1e293b, transparent),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    header {
+      margin-bottom: 80px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin: 0 0 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 600px;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #0b1220, var(--card));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .card + .card {
+      margin-top: 20px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
   </style>
 </head>
+
 <body>
+  <div class="container">
 
-<h1>Pritesh</h1>
-<p><strong>Product Manager</strong></p>
+    <header>
+      <span class="tag">Product Manager · SaaS</span>
+      <h1>
+        I design products by obsessing over<br>
+        user problems, constraints, and trade-offs.
+      </h1>
+      <p class="subtitle">
+        Product Manager with ~5 years of experience in SaaS.
+        Strong bias toward product discovery, clarity of thinking,
+        and shipping what actually matters.
+      </p>
+    </header>
 
-<p>
-I build products by obsessing over user problems, constraints, and trade-offs.
-Currently focused on SaaS, product discovery, and execution.
-</p>
+    <section>
+      <h2>Selected Work</h2>
 
-<h2>Case Studies</h2>
-<ul>
-  <li><a href="#">Project One — Reducing churn in a B2B SaaS</a></li>
-  <li><a href="#">Project Two — Improving onboarding conversion</a></li>
-</ul>
+      <div class="card">
+        <h3>Reducing churn in a B2B SaaS</h3>
+        <p>
+          Diagnosed activation gaps, redesigned onboarding,
+          and aligned stakeholders around one measurable outcome.
+        </p>
+      </div>
 
-<h2>Skills</h2>
-<p>Product Discovery, PRDs, Analytics, Stakeholder Management, GTM</p>
+      <div class="card">
+        <h3>Improving onboarding conversion</h3>
+        <p>
+          Simplified first-run experience by cutting features,
+          not adding them.
+        </p>
+      </div>
+    </section>
 
-<h2>Contact</h2>
-<p>
-<a href="mailto:youremail@example.com">Email</a> ·
-<a href="https://www.linkedin.com/">LinkedIn</a>
-</p>
+    <section>
+      <h2>Core Skills</h2>
+      <div class="skills">
+        <span class="skill">Product Discovery</span>
+        <span class="skill">PRDs & Specs</span>
+        <span class="skill">User Research</span>
+        <span class="skill">Analytics</span>
+        <span class="skill">Stakeholder Management</span>
+        <span class="skill">Go-to-Market</span>
+      </div>
+    </section>
 
+    <footer>
+      <p>
+        <a href="mailto:youremail@example.com">Email</a> ·
+        <a href="https://www.linkedin.com/">LinkedIn</a>
+      </p>
+    </footer>
+
+  </div>
 </body>
 </html>
+
