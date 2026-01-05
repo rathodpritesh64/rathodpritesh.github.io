@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Pritesh — Product Manager</title>
+  <title>Pritesh Rathod — Product Manager</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,185 +14,109 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #0f172a;
-      --card: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #38bdf8;
-      --border: #1f2937;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      margin: 0;
       font-family: Inter, system-ui, sans-serif;
-      background: radial-gradient(1200px 600px at 20% -10%, #1e293b, transparent),
-                  var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
-
-    header {
-      margin-bottom: 80px;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 6px 12px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 3rem;
-      line-height: 1.2;
-      margin: 0 0 20px;
-      letter-spacing: -0.02em;
-    }
-
-    .subtitle {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 600px;
-    }
-
-    section {
-      margin-bottom: 80px;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      margin-bottom: 24px;
-      letter-spacing: -0.01em;
-    }
-
-    .card {
-      background: linear-gradient(180deg, #0b1220, var(--card));
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px;
-    }
-
-    .card + .card {
-      margin-top: 20px;
-    }
-
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 1.1rem;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skill {
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding-top: 40px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.2rem;
-      }
     }
   </style>
 </head>
 
-<body>
-  <div class="container">
+<body class="bg-gradient-to-br from-slate-50 via-white to-sky-50 text-slate-800">
 
-    <header>
-      <span class="tag">Product Manager · SaaS</span>
-      <h1>
-        I design products by obsessing over<br>
-        user problems, constraints, and trade-offs.
+  <main class="max-w-5xl mx-auto px-6 py-20">
+
+    <!-- Header -->
+    <header class="mb-24">
+      <span class="inline-block mb-6 px-4 py-1.5 rounded-full text-sm font-medium
+                   bg-sky-100 text-sky-700">
+        Product Manager · 4+ Years · SaaS / B2B / AI
+      </span>
+
+      <h1 class="text-4xl md:text-6xl font-semibold tracking-tight leading-tight mb-6">
+        Pritesh Rathod
       </h1>
-      <p class="subtitle">
-        Product Manager with ~5 years of experience in SaaS.
-        Strong bias toward product discovery, clarity of thinking,
-        and shipping what actually matters.
+
+      <p class="text-xl md:text-2xl text-slate-600 max-w-3xl">
+        Product Manager focused on solving real user problems using data,
+        clear thinking, and pragmatic AI-first product decisions.
+      </p>
+
+      <p class="mt-6 text-slate-500 max-w-3xl">
+        4+ years building SaaS and B2B products. Currently employed and working
+        closely with AI-driven systems. Based in Pune, India.
       </p>
     </header>
 
-    <section>
-      <h2>Selected Work</h2>
+    <!-- Selected Work -->
+    <section class="mb-24">
+      <h2 class="text-2xl font-semibold mb-10">Selected Work</h2>
 
-      <div class="card">
-        <h3>Reducing churn in a B2B SaaS</h3>
-        <p>
-          Diagnosed activation gaps, redesigned onboarding,
-          and aligned stakeholders around one measurable outcome.
-        </p>
-      </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="p-8 rounded-2xl border border-slate-200 bg-white
+                    hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-semibold mb-2">
+            Case Study — AI SaaS Product
+          </h3>
+          <p class="text-slate-600">
+            Placeholder for a deep dive into problem definition, constraints,
+            trade-offs, and outcomes in an AI-driven SaaS environment.
+          </p>
+        </div>
 
-      <div class="card">
-        <h3>Improving onboarding conversion</h3>
-        <p>
-          Simplified first-run experience by cutting features,
-          not adding them.
-        </p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Core Skills</h2>
-      <div class="skills">
-        <span class="skill">Product Discovery</span>
-        <span class="skill">PRDs & Specs</span>
-        <span class="skill">User Research</span>
-        <span class="skill">Analytics</span>
-        <span class="skill">Stakeholder Management</span>
-        <span class="skill">Go-to-Market</span>
+        <div class="p-8 rounded-2xl border border-slate-200 bg-white
+                    hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-semibold mb-2">
+            Case Study — B2B Workflow Optimization
+          </h3>
+          <p class="text-slate-600">
+            Placeholder focused on data analysis, user behavior,
+            and measurable business impact.
+          </p>
+        </div>
       </div>
     </section>
 
-    <footer>
-      <p>
-        <a href="mailto:youremail@example.com">Email</a> ·
-        <a href="https://www.linkedin.com/">LinkedIn</a>
-      </p>
+    <!-- Core Strengths -->
+    <section class="mb-24">
+      <h2 class="text-2xl font-semibold mb-10">Core Strengths</h2>
+
+      <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 rounded-full bg-slate-100 text-slate-700">
+          Solving Real User Problems
+        </span>
+        <span class="px-4 py-2 rounded-full bg-slate-100 text-slate-700">
+          Data Analysis
+        </span>
+        <span class="px-4 py-2 rounded-full bg-slate-100 text-slate-700">
+          Product Discovery
+        </span>
+        <span class="px-4 py-2 rounded-full bg-slate-100 text-slate-700">
+          AI Product Thinking
+        </span>
+        <span class="px-4 py-2 rounded-full bg-slate-100 text-slate-700">
+          Stakeholder Alignment
+        </span>
+        <span class="px-4 py-2 rounded-full bg-slate-100 text-slate-700">
+          Execution with Constraints
+        </span>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-12 border-t border-slate-200 text-slate-500">
+      <div class="flex flex-wrap gap-4">
+        <a href="mailto:rathodpritesh64@gmail.com"
+           class="hover:text-slate-800 transition-colors">
+          Email
+        </a>
+        <span>·</span>
+        <a href="#"
+           class="hover:text-slate-800 transition-colors">
+          LinkedIn (coming soon)
+        </a>
+      </div>
     </footer>
 
-  </div>
+  </main>
+
 </body>
 </html>
