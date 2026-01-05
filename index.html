@@ -5,168 +5,182 @@
   <title>Pritesh Rathod — Product Manager</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fonts -->
+  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #ffffff;
-      --ink: #0f172a;
-      --muted: #475569;
-      --pink: #ec4899;
-      --blue: #2563eb;
-      --green: #16a34a;
-      --yellow: #eab308;
-      --card: #f8fafc;
+    * {
+      box-sizing: border-box;
     }
-
-    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: "Space Grotesk", system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
+      font-family: 'Syne', system-ui, sans-serif;
+      color: #0f172a;
+      overflow-x: hidden;
     }
 
-    .wrap {
+    /* ---------- ANIMATED BACKGROUND ---------- */
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(120deg, #ff0080, #7928ca, #2afadf);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+      opacity: 0.15;
+      z-index: -1;
+    }
+
+    /* ---------- LAYOUT ---------- */
+    main {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 80px 32px;
+      padding: 120px 40px 80px;
     }
 
-    /* HERO */
+    /* ---------- HERO ---------- */
     .hero {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 60px;
-      margin-bottom: 120px;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    .badge {
+    .pill {
       display: inline-block;
       padding: 10px 18px;
       border-radius: 999px;
-      background: var(--ink);
-      color: white;
-      font-size: 0.9rem;
-      margin-bottom: 24px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      font-weight: 600;
+      width: fit-content;
+      animation: fadeUp 0.8s ease forwards;
     }
 
     h1 {
-      font-size: 4.2rem;
-      line-height: 1.05;
-      margin: 0 0 24px;
-      letter-spacing: -0.03em;
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 0.95;
+      margin: 30px 0;
+      color: white;
+      animation: fadeUp 1s ease forwards;
     }
 
     .hero p {
-      font-size: 1.3rem;
-      color: var(--muted);
-      max-width: 600px;
+      font-size: 1.4rem;
+      max-width: 700px;
+      color: rgba(255,255,255,0.85);
+      animation: fadeUp 1.2s ease forwards;
     }
 
-    .hero-right {
-      background: linear-gradient(135deg, var(--pink), var(--blue));
-      border-radius: 32px;
-      padding: 40px;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .hero-right h2 {
-      font-size: 1.6rem;
-      margin-bottom: 12px;
-    }
-
-    /* SECTIONS */
+    /* ---------- GLASS SECTIONS ---------- */
     section {
-      margin-bottom: 120px;
+      margin-top: 160px;
     }
 
-    .section-title {
-      font-size: 2.4rem;
+    .glass {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(18px);
+      border-radius: 32px;
+      padding: 60px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      font-size: 3rem;
       margin-bottom: 40px;
-      letter-spacing: -0.02em;
     }
 
-    /* CARDS */
-    .grid {
+    /* ---------- CARDS ---------- */
+    .cards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
     }
 
     .card {
-      background: var(--card);
-      border-radius: 24px;
       padding: 32px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.35);
     }
 
-    .card h3 {
-      margin: 0 0 12px;
-      font-size: 1.4rem;
-    }
-
-    .card p {
-      color: var(--muted);
-    }
-
-    /* SKILLS */
+    /* ---------- SKILLS ---------- */
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 20px;
     }
 
     .skill {
-      padding: 14px 22px;
+      padding: 16px 26px;
       border-radius: 999px;
-      font-weight: 500;
+      font-weight: 600;
+      background: linear-gradient(135deg, #ff0080, #7928ca);
       color: white;
+      transition: transform 0.2s ease;
     }
 
-    .pink { background: var(--pink); }
-    .blue { background: var(--blue); }
-    .green { background: var(--green); }
-    .yellow { background: var(--yellow); color: #1e293b; }
+    .skill:hover {
+      transform: rotate(-2deg) scale(1.05);
+    }
 
-    /* FOOTER */
+    /* ---------- FOOTER ---------- */
     footer {
-      padding-top: 60px;
-      border-top: 2px solid #e5e7eb;
-      font-size: 1.1rem;
+      margin-top: 200px;
+      padding-bottom: 80px;
+      color: white;
+      font-size: 1.2rem;
     }
 
     footer a {
-      color: var(--ink);
+      color: white;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     footer a:hover {
       text-decoration: underline;
     }
 
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
+    @media (max-width: 700px) {
+      main {
+        padding: 100px 24px 60px;
       }
-      h1 {
-        font-size: 3rem;
-      }
-      .grid {
-        grid-template-columns: 1fr;
+      .glass {
+        padding: 40px;
       }
     }
   </style>
@@ -174,94 +188,86 @@
 
 <body>
 
-  <div class="wrap">
+  <div class="bg"></div>
+  <div class="noise"></div>
+
+  <main>
 
     <!-- HERO -->
     <div class="hero">
-      <div>
-        <span class="badge">Product Manager · 4+ Years · SaaS / B2B / AI</span>
+      <span class="pill">Product Manager · 4+ Years · SaaS / B2B / AI</span>
 
-        <h1>
-          Pritesh<br>
-          Rathod
-        </h1>
+      <h1>
+        Pritesh<br>
+        Rathod
+      </h1>
 
-        <p>
-          Product Manager working at the intersection of SaaS, B2B, and AI.
-          I focus on solving real user problems using data, judgment,
-          and a healthy disrespect for useless process.
-        </p>
-      </div>
-
-      <div class="hero-right">
-        <div>
-          <h2>Currently</h2>
-          <p>
-            Employed · AI-focused product work<br>
-            Based in Pune, India
-          </p>
-        </div>
-
-        <div>
-          <strong>Email</strong><br>
-          rathodpritesh64@gmail.com
-        </div>
-      </div>
+      <p>
+        Product Manager working at the intersection of AI, SaaS, and B2B.
+        I solve real user problems with data, judgment,
+        and zero tolerance for performative process.
+        <br><br>
+        Based in Pune, India.
+      </p>
     </div>
 
     <!-- WORK -->
     <section>
-      <h2 class="section-title">Selected Work</h2>
+      <div class="glass">
+        <h2>Selected Work</h2>
 
-      <div class="grid">
-        <div class="card">
-          <h3>AI SaaS Product</h3>
-          <p>
-            Placeholder for a deep case study on defining real problems,
-            navigating constraints, and shipping measurable outcomes.
-          </p>
-        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>AI SaaS Product</h3>
+            <p>
+              Placeholder for a deep case study on defining problems,
+              navigating constraints, and shipping outcomes.
+            </p>
+          </div>
 
-        <div class="card">
-          <h3>B2B Workflow Redesign</h3>
-          <p>
-            Placeholder for a case study focused on data analysis,
-            user behavior, and trade-off driven decisions.
-          </p>
-        </div>
+          <div class="card">
+            <h3>B2B Workflow Redesign</h3>
+            <p>
+              Placeholder focused on data analysis,
+              experimentation, and trade-offs.
+            </p>
+          </div>
 
-        <div class="card">
-          <h3>Experimentation & Metrics</h3>
-          <p>
-            Placeholder for experimentation, insight generation,
-            and what didn’t work.
-          </p>
+          <div class="card">
+            <h3>Metrics & Experiments</h3>
+            <p>
+              Placeholder for learning loops,
+              failures, and insight generation.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- SKILLS -->
     <section>
-      <h2 class="section-title">What I’m Good At</h2>
+      <div class="glass">
+        <h2>What I’m Good At</h2>
 
-      <div class="skills">
-        <span class="skill pink">Solving Real User Problems</span>
-        <span class="skill blue">Data Analysis</span>
-        <span class="skill green">Product Discovery</span>
-        <span class="skill yellow">AI Product Thinking</span>
-        <span class="skill pink">Decision Making Under Constraints</span>
+        <div class="skills">
+          <span class="skill">Solving Real User Problems</span>
+          <span class="skill">Data Analysis</span>
+          <span class="skill">Product Discovery</span>
+          <span class="skill">AI Product Thinking</span>
+          <span class="skill">Decision Making Under Constraints</span>
+        </div>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
       <p>
-        <a href="#">LinkedIn (coming soon)</a> ·
-        <a href="mailto:rathodpritesh64@gmail.com">Email</a>
+        <a href="mailto:rathodpritesh64@gmail.com">Email</a> ·
+        <a href="#">LinkedIn (coming soon)</a>
       </p>
     </footer>
 
-  </div>
+  </main>
 
 </body>
 </html>
